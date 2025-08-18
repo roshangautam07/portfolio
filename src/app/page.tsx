@@ -4,16 +4,37 @@ import Image from "next/image";
 
 export default function Home() {
   const skills = [
-    { name: "HTML", icon: "html5" },
-    { name: "Javascript", icon: "javascript" },
-    { name: "React", icon: "react" },
-    { name: "React Native", icon: "react" },
-    { name: "Node.js", icon: "nodejs" },
-    { name: "MySQL", icon: "mysql" },
-    { name: "PostgreSQL", icon: "postgresql" },
-    { name: "Linux", icon: "linux" },
-    { name: "Java", icon: "java" },
-    { name: "Spring Boot", icon: "springboot" }
+    {
+      category: "Frontend Language, tool and Framework",
+      skills: "HTML, CSS, JavaScript, TypeScript, React, Redux, Zustand, React Query",
+    },
+    {
+      category: "Backend Language, tool and Framework",
+      skills: "Node.js, Express.js, Prisma, Sequelize, Java, Spring boot, Hibernet, PHP",
+    },
+    { category: "Mobile Development", skills: "React Native, Android Development" },
+    { category: "API", skills: "REST API, GraphQL, gRPC, Websocket, TCP socket" },
+    { category: "Database", skills: "Mysql, Postgres, Redis, Mongodb" },
+    {
+      category: "Operating System, Web server and Cloud",
+      skills: "Linux, Mac OS, Apache web server, Nginx web server, Docker",
+    },
+    {
+      category: "Software Design Pattern",
+      skills: "Repository, Singleton, Builder, Strategy",
+    },
+    {
+      category: "Security",
+      skills: "JWT, Password Hashing, CSP, CORS, HSTS, csurf, Rate Limiting",
+    },
+    {
+      category: "System Design",
+      skills: "Monolith, Microservices, Publisher Subscriber",
+    },
+    {
+      category: "Performance Optimization",
+      skills: "SSR/SSG, Code Splitting, Tree Shaking, Lazy Loading, Image Optimization, Preloading, Prefetching, Redis Caching, Pagination, DB Indexing, table Partitioning, Connection Pooling, Memoization, Debouncing, Throttling",
+    },
   ];
 
   const education = [
@@ -118,18 +139,21 @@ export default function Home() {
       <section className={styles.section} id="skills">
         <div className={styles.sectionContent}>
           <h2 className={styles.sectionTitle}>Skills</h2>
-          <div className={styles.skillsGrid}>
-            {skills.map((skill, index) => (
-              <div key={index} className={styles.skillCard}>
-                <div className={styles.skillIcon}>
-                  <svg viewBox="0 0 24 24" fill="currentColor" className={styles.iconSvg}>
-                    <path d={getSkillIcon(skill.icon)} />
-                  </svg>
-                </div>
-                <span className={styles.skillName}>{skill.name}</span>
-              </div>
-            ))}
-          </div>
+          <table className={styles.skillsTable}>
+            <tbody>
+              {skills.map((skill, index) => (
+                <tr key={index}>
+                  <td className={styles.skillCategory}>
+                    <svg className={styles.skillIcon} viewBox="0 0 24 24" fill="currentColor">
+                      <path d={getSkillIcon(skill.category)} />
+                    </svg>
+                    {skill.category}
+                  </td>
+                  <td>{skill.skills}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
 
