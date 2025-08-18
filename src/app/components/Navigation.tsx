@@ -40,6 +40,11 @@ export default function Navigation() {
             </button>
           </li>
           <li>
+            <button onClick={() => scrollToSection('experience')} className={styles.navLink}>
+              Experience
+            </button>
+          </li>
+          <li>
             <button onClick={() => scrollToSection('education')} className={styles.navLink}>
               Education
             </button>
@@ -53,4 +58,4 @@ export default function Navigation() {
       </div>
     </nav>
   );
-} 
+}

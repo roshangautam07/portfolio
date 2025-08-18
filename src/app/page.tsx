@@ -27,6 +27,14 @@ export default function Home() {
     }
   ];
 
+  const experience = [
+    {
+      period: "September 2021 - Current",
+      company: "iMark Digital Pvt. Ltd.",
+      role: "Software Developer"
+    }
+  ];
+
   const getSkillIcon = (iconName: string) => {
     const icons: { [key: string]: string } = {
       html5: "M1.5 0l1.364 15.36L12 18l9.136-2.64L22.5 0h-21zm16.2 5.28l-.12 1.344-.12 1.344H7.04l.12 1.344.12 1.344h7.44l-.36 4.032L12 15.072l-2.28-.672-.144-1.632H7.44l.24 2.688 4.32 1.248 4.32-1.248.576-6.432.048-.528.048-.528H7.44l-.12-1.344-.12-1.344h10.38z",
@@ -115,6 +123,24 @@ export default function Home() {
                   </svg>
                 </div>
                 <span className={styles.skillName}>{skill.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section className={styles.section} id="experience">
+        <div className={styles.sectionContent}>
+          <h2 className={styles.sectionTitle}>Experience</h2>
+          <div className={styles.educationList}>
+            {experience.map((exp, index) => (
+              <div key={index} className={styles.educationCard}>
+                <div className={styles.educationPeriod}>{exp.period}</div>
+                <div className={styles.educationDetails}>
+                  <h3 className={styles.educationDegree}>{exp.role}</h3>
+                  <p className={styles.educationInstitution}>{exp.company}</p>
+                </div>
               </div>
             ))}
           </div>
