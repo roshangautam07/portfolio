@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import Navigation from "./components/Navigation";
 import Image from "next/image";
+import Contact from "./components/Contact";
 
 export default function Home() {
   const skills = [
@@ -236,6 +237,7 @@ export default function Home() {
         </div>
       </section>
 
+      <Contact />
       {/* Footer */}
       <footer className={styles.footer}>
         <p>&copy; 2024 Roshan Gautam. All rights reserved.</p>
