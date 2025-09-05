@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import Navigation from "./components/Navigation";
 import Image from "next/image";
+import Contact from "./components/Contact";
 
 export default function Home() {
   const skills = [
@@ -211,7 +212,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+<Contact />
       {/* Footer */}
       <footer className={styles.footer}>
         <p>&copy; 2024 Roshan Gautam. All rights reserved.</p>
@@ -219,3 +220,25 @@ export default function Home() {
     </div>
   );
 }
+
+//  {/* Skills Section */}
+//  <section className={styles.section} id="skills">
+//  <div className={styles.sectionContent}>
+//    <h2 className={styles.sectionTitle}>Skills</h2>
+//    <table className={styles.skillsTable}>
+//      <tbody>
+//        {skills.map((skill, index) => (
+//          <tr key={index}>
+//            <td className={styles.skillCategory}>
+//              <svg className={styles.skillIcon} viewBox="0 0 24 24" fill="currentColor">
+//                <path d={getSkillIcon(skill.category)} />
+//              </svg>
+//              {skill.category}
+//            </td>
+//            <td>{skill.skills}</td>
+//          </tr>
+//        ))}
+//      </tbody>
+//    </table>
+//  </div>
+// </section>
